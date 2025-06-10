@@ -1,0 +1,171 @@
+body {
+  background-image: url('../media/fondo\ menu.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Gotham-Book', sans-serif;
+  margin: 0;
+}
+
+h1, h2, p {
+    color: white !important;
+}
+
+/* Header y Footer */
+header, footer {
+  background-color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+}
+
+/* Menú */
+.navbar-nav .nav-link {
+  color: white;
+}
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+}
+
+/* Contenido de rangos */
+.contenedor-rangos {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Título */
+.titulo {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  animation: aparecerDesdeAbajo 1s ease-out forwards;
+  animation-delay: 0s;
+}
+
+/* Cards de cada rango */
+.rango-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #555;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+.rango-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.rango-card p {
+  font-size: 1rem;
+}
+
+.rango-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+.rango-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.rango-box img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.rango-texto {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.rango-imagen {
+  flex-shrink: 0;
+}
+
+.fila.reverso {
+  flex-direction: row-reverse;
+}
+
+@keyframes aparecerDesdeAbajo {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rango-box {
+  opacity: 0;
+  animation: aparecerDesdeAbajo 1s ease-out forwards;
+}
+
+/* Añadir delays para que aparezcan en orden */
+.rango-box:nth-child(1) { animation-delay: 0.2s; }
+.rango-box:nth-child(2) { animation-delay: 0.4s; }
+.rango-box:nth-child(3) { animation-delay: 0.6s; }
+.rango-box:nth-child(4) { animation-delay: 0.8s; }
+.rango-box:nth-child(5) { animation-delay: 1s; }
+
+.contenedor-misiones {
+  max-width: 800px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+}
+
+.lista-misiones {
+  background-color: rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+  
+  opacity: 0;
+  animation: aparecerDesdeAbajo 1s ease-out forwards;
+  animation-delay: 0.3s;
+  list-style-type: none;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+
+.lista-misiones li {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: white;
+}
+
+.lista-misiones li em {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.lista-misiones li strong {
+  font-weight: bold;
+  text-transform: uppercase;
+}

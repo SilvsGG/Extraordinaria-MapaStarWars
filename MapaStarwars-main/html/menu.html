@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú del Imperio</title>
+
+  <link rel="stylesheet" href="../MapaStarwars-main/Fonts/Gotham-Book.otf">
+
+  <link rel="stylesheet" href="../css/menu.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ✅ HEADER con saludo y enlaces -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <a href="menu.html" class="navbar-brand">
+        <img src="../media/logo imperio.png" alt="Volver al menú" class="menu-icon">
+      </a>
+      
+      <!-- Saludo personalizado a la izquierda -->
+      <span class="navbar-text fw-bold">
+        Bienvenido <span id="rango"></span> <span id="apellido"></span>
+      </span>
+
+      <!-- Botón toggler para mobile (para colapsar menú a la derecha) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menú alineado a la derecha -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+        <ul class="navbar-nav flex-row gap-4">
+          <li class="nav-item">
+            <a class="nav-link" href="../html/rangos.html">Rangos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/map.html">Mapa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/misiones.html">Tus misiones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+  <!-- ✅ IMAGEN CENTRAL -->
+  <img src="../media/propaganda.jpg" alt="Imagen central del Imperio" class="central-image animate-up" style="animation-delay: 0.2s;"> 
+
+  <div style="width: 50px;"></div>
+
+  <!-- ✅ TEXTO INTRODUCTORIO -->
+  <div class="intro-text animate-up" style="animation-delay: 0.6s;">
+    <p>
+      Únete al Imperio Galáctico y asegura el orden y la paz en toda la galaxia. Bajo el liderazgo del Emperador, traemos estabilidad, progreso y seguridad a todos los sistemas estelares. Solo juntos, con disciplina y valentía, podremos derrotar la anarquía y la rebelión que amenazan nuestra civilización. Sé parte del futuro glorioso, cumple con tu deber y construye un Imperio fuerte, justo y eterno. ¡El destino de la Galaxia está en tus manos!
+    </p>
+  </div>
+
+  <div style="width: 50px;"></div>
+
+<section class="carrusel-section animate-up" style="animation-delay: 1s;">
+  <div class="container py-5">
+
+    <h2 class="text-center mb-4">Planetas controlados por el Imperio</h2>
+
+    <!-- ✅ CARRUSEL DE IMÁGENES -->
+    <div id="imperialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="../media/Imágenes carrusel/lothal.webp" class="d-block w-100" alt="Imagen 1">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>LOTHAL</h5>
+            <p>Puestos de avanzada: 12</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/scarif.jpg" class="d-block w-100" alt="Imagen 2">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>SCARIF</h5>
+            <p>Puestos de avanzada: 8</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/coruscant.jpg" class="d-block w-100" alt="Imagen 3">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>CORUSCANT</h5>
+            <p>Puestos de avanzada: BASE PRINCIPAL</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/eadu.jpg" class="d-block w-100" alt="Imagen 4">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>EADU</h5>
+            <p>Puestos de avanzada: 10</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/jedha.jpg" class="d-block w-100" alt="Imagen 5">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>JEDHA</h5>
+            <p>Puestos de avanzada: 15</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/mustafar.webp" class="d-block w-100" alt="Imagen 6">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>MUSTAFAR</h5>
+            <p>Puestos de avanzada: 10</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/wobani.jpeg" class="d-block w-100" alt="Imagen 7">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>WOBANI</h5>
+            <p>Puestos de avanzada: 7</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/lah'mu.jpg" class="d-block w-100" alt="Imagen 8">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>LAH'MU</h5>
+            <p>Puestos de avanzada: 5</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/tatooine.jpg" class="d-block w-100" alt="Imagen 9">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>TATOOINE</h5>
+            <p>Puestos de avanzada: 17</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="../media/Imágenes carrusel/seelos.jpg" class="d-block w-100" alt="Imagen 10">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>SEELOS</h5>
+            <p>Puestos de avanzada: 8</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ✅ Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#imperialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#imperialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  <!-- ✅ FOOTER -->
+  <footer>
+    <p class="mb-0 fs-5">¡Larga vida al Imperio!</p>
+  </footer>
+
+  <!-- ✅ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="../js/menu.js"></script>
+
+</body>
+</html>

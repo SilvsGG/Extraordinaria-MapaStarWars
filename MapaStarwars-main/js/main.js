@@ -1,35 +1,41 @@
-// Redirigir al planeta correspondiente
-function redirectToPlanet(planetId) {
-    window.location.href = `html/planet.html?id=${planetId}`;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  // Mostrar animación fade-in (solo si existe)
+  const fadeInElement = document.querySelector('.fade-in');
+  if (fadeInElement) {
+    fadeInElement.classList.add('show');
+  }
 
-// Activar tooltips de Bootstrap al cargar el DOM
-document.addEventListener('DOMContentLoaded', function () {
-  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  tooltipTriggerList.map(function (el) {
-    return new bootstrap.Tooltip(el);
-  });
+  // Lógica de la página de identificación (index.html)
+  const form = document.getElementById("idForm");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const apellido = document.getElementById("apellido").value;
+      const rango = document.getElementById("rango").value;
+
+      localStorage.setItem("nombre", nombre);
+      localStorage.setItem("apellido", apellido);
+      localStorage.setItem("rango", rango);
+
+      window.location.href = "html/menu.html";
+    });
+  }
+
+  // Lógica de la página del menú (menu.html)
+  const nombreSpan = document.getElementById("nombreUsuario");
+  const apellidoSpan = document.getElementById("apellidoUsuario");
+  const rangoSpan = document.getElementById("rangoUsuario");
+
+  if (nombreSpan && apellidoSpan && rangoSpan) {
+    const nombre = localStorage.getItem("nombre") || "Desconocido";
+    const apellido = localStorage.getItem("apellido") || "Desconocido";
+    const rango = localStorage.getItem("rango") || "Sin rango";
+
+    nombreSpan.textContent = nombre;
+    apellidoSpan.textContent = apellido;
+    rangoSpan.textContent = rango;
+  }
 });
 
-// Efecto parallax
-document.addEventListener('mousemove', function(e) {
-  const bg = document.getElementById('galactic-bg');
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
-  bg.style.transform = `translate(${x}px, ${y}px)`;
-});
-
-// Botón de inicio - fade
-document.getElementById('start-button').addEventListener('click', function() {
-  const startScreen = document.getElementById('start-screen');
-  const mainMap = document.getElementById('main-map');
-
-  startScreen.classList.add('fade-out');
-
-  // Esperar a que termine el fadeOut para ocultar
-  setTimeout(() => {
-    startScreen.style.display = 'none';
-    mainMap.classList.remove('hidden');
-    mainMap.classList.add('fade-in');
-  }, 1500);
-});

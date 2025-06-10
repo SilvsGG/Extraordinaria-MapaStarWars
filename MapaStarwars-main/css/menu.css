@@ -1,0 +1,99 @@
+ /* Fondo de pantalla completo */
+body {
+  background-image: url('../media/fondo\ menu.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: 'Gotham-Book', sans-serif;
+}
+
+header, footer {
+  background-color: #000;
+}
+
+.navbar-nav .nav-link, footer p {
+  color: white;
+  size: 50px;
+}
+
+.navbar-text {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.menu-icon {
+  height: 40px; 
+  width: auto;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.central-image {
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto;
+  margin-bottom: 60px;
+  display: block;
+  box-shadow: 0 4px 10px black;
+}
+
+.intro-text {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-text p {
+  max-width: 900px; 
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0; 
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.carrusel-section {
+  color: white;
+  width: 100%;
+}
+
+.carrusel-section h2 {
+  font-family: 'Gotham-Book', sans-serif;
+  font-size: 2rem;
+  color:rgba(212, 0, 0, 1);
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-up {
+  animation: slideUp 1s ease-out forwards;
+  opacity: 0;
+}
