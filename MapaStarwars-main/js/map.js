@@ -1,35 +1,28 @@
-// Redirigir al planeta correspondiente
+// Redirige al planeta correspondiente
 function redirectToPlanet(planetId) {
-    window.location.href = `html/planet.html?id=${planetId}`;
+  window.location.href = `html/planet.html?id=${planetId}`;
 }
 
-// Activar tooltips de Bootstrap al cargar el DOM
-document.addEventListener('DOMContentLoaded', function () {
-  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  tooltipTriggerList.map(function (el) {
-    return new bootstrap.Tooltip(el);
-  });
-});
-
-// Efecto parallax
-document.addEventListener('mousemove', function(e) {
+// Esperar a que cargue el DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const planetImages = document.querySelectorAll('.planet-img');
+  const tooltipElements = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   const bg = document.getElementById('galactic-bg');
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
-  bg.style.transform = `translate(${x}px, ${y}px)`;
-});
 
-// Botón de inicio - fade
-document.getElementById('start-button').addEventListener('click', function() {
-  const startScreen = document.getElementById('start-screen');
-  const mainMap = document.getElementById('main-map');
+  // Inicializar tooltips de Bootstrap
+  tooltipElements.forEach(el => new bootstrap.Tooltip(el));
 
-  startScreen.classList.add('fade-out');
+  // Efecto parallax del fondo
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    bg.style.transform = `translate(${x}px, ${y}px)`;
+  });
 
-  // Esperar a que termine el fadeOut para ocultar
+  // Añadir clase fade-in para hacer aparecer los planetas con efecto
   setTimeout(() => {
-    startScreen.style.display = 'none';
-    mainMap.classList.remove('hidden');
-    mainMap.classList.add('fade-in');
-  }, 1500);
+    planetImages.forEach(img => {
+      img.classList.add('fade-in');
+    });
+  }, 100); // Delay pequeño para asegurar que se vea el efecto
 });
